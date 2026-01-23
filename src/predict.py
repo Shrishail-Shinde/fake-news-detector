@@ -6,6 +6,9 @@ from nltk.corpus import stopwords
 nltk.download("stopwords")
 stop_words = set(stopwords.words("english"))
 
+model = joblib.load("models/fake_news_model.pkl")
+vectorizer = joblib.load("models/vectorizer.pkl")
+
 def clean_text(text):
     text = text.lower()
     text = re.sub(r'\[.*?\]', '', text)
